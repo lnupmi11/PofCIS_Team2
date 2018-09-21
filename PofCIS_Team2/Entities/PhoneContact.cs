@@ -1,20 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
 using PofCIS_Team2.Entities.Interfaces;
 
 namespace PofCIS_Team2.Entities
 {
 	public class PhoneContact : Contact, IFileManager
 	{
-		private string phoneNumber;
+		public string PhoneNumber { get; set; }
 
-		
-		public string ReadData(string filename)
+
+		public PhoneContact(string name, string phoneNumber) : base(name)
 		{
-			return System.IO.File.ReadAllText(filename);
+			PhoneNumber = phoneNumber;
 		}
 
-		public void OutputDataToFile()
+		public PhoneContact(string phoneNumber)
 		{
-			throw new System.NotImplementedException();
+			PhoneNumber = phoneNumber;
+		}
+
+		public PhoneContact()
+		{
+		}
+
+		public void LoadJson(string filename)
+		{
+			using (var r = new StreamReader(filename))
+			{
+				var json = r.ReadToEnd();
+				var items = JsonConvert.DeserializeObject<List<PhoneContact>>(json);
+				foreach (var item in items)
+				{
+					Console.WriteLine("{0} {1}", item.Name, item.PhoneNumber);
+				}
+			}
 		}
 	}
 }

@@ -1,12 +1,18 @@
 ﻿using System;
+using PofCIS_Team2.Entities;
 
 namespace PofCIS_Team2
 {
-	class Program
+	public static class Program
 	{
-		static void Main(string[] args)
+		private static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			var ph = new PhoneContact();
+            ph.LoadJson("/Users/roman/RiderProjects/PofCIS_Team2/PofCIS_Team2/Data/phoneData.json");
+			var sk = new SkypeContact();
+			sk.LoadJson("/Users/roman/RiderProjects/PofCIS_Team2/PofCIS_Team2/Data/skypeData.json");
+			var ml = new MailContact();
+			ml.LoadJson("/Users/roman/RiderProjects/PofCIS_Team2/PofCIS_Team2/Data/mailData.json");
 		}
 	}
 }

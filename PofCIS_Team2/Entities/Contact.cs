@@ -2,12 +2,15 @@ namespace PofCIS_Team2.Entities
 {
 	public abstract class Contact
 	{
-		private string name;
-
-		public string Name
+		protected Contact(string name)
 		{
-			get => name;
-			set => name = value;
+			Name = name;
 		}
+
+		protected Contact()
+		{
+		}
+
+		public string Name { get; set; }
 	}
 }
