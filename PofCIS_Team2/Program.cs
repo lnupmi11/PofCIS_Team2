@@ -1,18 +1,27 @@
 ﻿using System;
-using PofCIS_Team2.Entities;
+using System.Windows.Forms;
+using AppForm = WinFormsHomework.UI.AppForm;
 
-namespace PofCIS_Team2
+namespace WinFormsHomework
 {
-	public static class Program
+	static class Program
 	{
-		private static void Main(string[] args)
+		/// <summary>
+		/// The main entry point for the application.
+		/// </summary>
+		[STAThread]
+		static void Main()
 		{
-			var ph = new PhoneContact();
-            ph.LoadJson("/Users/roman/RiderProjects/PofCIS_Team2/PofCIS_Team2/Data/phoneData.json");
-			var sk = new SkypeContact();
-			sk.LoadJson("/Users/roman/RiderProjects/PofCIS_Team2/PofCIS_Team2/Data/skypeData.json");
-			var ml = new MailContact();
-			ml.LoadJson("/Users/roman/RiderProjects/PofCIS_Team2/PofCIS_Team2/Data/mailData.json");
+			Application.EnableVisualStyles();
+			Application.SetCompatibleTextRenderingDefault(false);
+			try
+			{
+				Application.Run(new AppForm());
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine($@"{e.Source}{e.Message}");
+			}
 		}
 	}
 }

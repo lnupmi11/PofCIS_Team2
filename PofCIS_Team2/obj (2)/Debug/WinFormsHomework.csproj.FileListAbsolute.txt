@@ -1,0 +1,5 @@
+C:\Users\Roman\Documents\Visual Studio 2017\Projects\WinFormsHomework\WinFormsHomework\bin\Debug\WinFormsHomework.exe
+C:\Users\Roman\Documents\Visual Studio 2017\Projects\WinFormsHomework\WinFormsHomework\bin\Debug\WinFormsHomework.pdb
+C:\Users\Roman\Documents\Visual Studio 2017\Projects\WinFormsHomework\WinFormsHomework\obj\Debug\WinFormsHomework.csprojResolveAssemblyReference.cache
+C:\Users\Roman\Documents\Visual Studio 2017\Projects\WinFormsHomework\WinFormsHomework\obj\Debug\WinFormsHomework.exe
+C:\Users\Roman\Documents\Visual Studio 2017\Projects\WinFormsHomework\WinFormsHomework\obj\Debug\WinFormsHomework.pdb
