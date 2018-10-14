@@ -1,0 +1,32 @@
+Triangle:
+ 	Point 1: x=2, y=3
+ 	Point 2: x=0, y=0
+ 	Point 3: x=8, y=8
+
+Triangle:
+ 	Point 1: x=4, y=2
+ 	Point 2: x=1, y=3
+ 	Point 3: x=0, y=0
+
+Triangle:
+ 	Point 1: x=-2, y=-1
+ 	Point 2: x=-5, y=-1
+ 	Point 3: x=-2, y=-5
+
+Square: 
+ 	Point 1: x=-1, y=-2
+ 	Point 2: x=3, y=-2
+ 	Point 3: x=3, y=2
+ 	Point 4: x=-1, y=2
+
+Circle:
+ 	Radius:2.82842712474619
+ Points:
+ 	Point 1: x=0, y=0
+ 	Point 2: x=2, y=2
+
+Circle:
+ 	Radius:4.24264068711928
+ Points:
+ 	Point 1: x=-5, y=-5
+ 	Point 2: x=-2, y=-2
