@@ -50,7 +50,7 @@ namespace PofCIS_Team2
 		
 		public struct Const
 		{
-			private const string DataRoot = "/Users/roman/RiderProjects/PofCIS_Team2/PofCIS_Team2/Data/";
+			private const string DataRoot = "../PofCIS_Team2/Data/";
 			
 			public const string InputDataRoot = DataRoot + "Input/";
 		
