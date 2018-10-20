@@ -17,73 +17,73 @@ import ReportIcon from '@material-ui/icons/Report';
 
 const drawerWidth = 250;
 const styles = {
-  root: {
-    width: drawerWidth
-  },
-  paper: {
-    width: drawerWidth
-  }
+	root: {
+		width: drawerWidth
+	},
+	paper: {
+		width: drawerWidth
+	}
 };
 
 const MuiTest = ({ classes }) => (
-  <Drawer
-    variant="permanent"
-    anchor="left"
-    className={classes.root}
-    classes={{ paper: classes.paper }}
-  >
-    <List>
-      <ListItem button>
-        <ListItemIcon>
-          <InboxIcon />
-        </ListItemIcon>
-        <ListItemText primary="Home" />
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-          <StarIcon />
-        </ListItemIcon>
-        <ListItemText primary="Starred" />
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-          <SendIcon />
-        </ListItemIcon>
-        <ListItemText primary="Send mail" />
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-          <DraftsIcon />
-        </ListItemIcon>
-        <ListItemText primary="Drafts" />
-      </ListItem>
-    </List>
-    <Divider />
-    <List>
-      <ListItem button>
-        <ListItemIcon>
-          <MailIcon />
-        </ListItemIcon>
-        <ListItemText primary="All mail" />
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-          <DeleteIcon />
-        </ListItemIcon>
-        <ListItemText primary="Trash" />
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-          <ReportIcon />
-        </ListItemIcon>
-        <ListItemText primary="Spam" />
-      </ListItem>
-    </List>
-  </Drawer>
+	<Drawer
+		variant="permanent"
+		anchor="left"
+		className={classes.root}
+		classes={{ paper: classes.paper }}
+	>
+		<List>
+			<ListItem button>
+				<ListItemIcon>
+					<InboxIcon />
+				</ListItemIcon>
+				<ListItemText primary="Home" />
+			</ListItem>
+			<ListItem button>
+				<ListItemIcon>
+					<StarIcon />
+				</ListItemIcon>
+				<ListItemText primary="Starred" />
+			</ListItem>
+			<ListItem button>
+				<ListItemIcon>
+					<SendIcon />
+				</ListItemIcon>
+				<ListItemText primary="Send mail" />
+			</ListItem>
+			<ListItem button>
+				<ListItemIcon>
+					<DraftsIcon />
+				</ListItemIcon>
+				<ListItemText primary="Drafts" />
+			</ListItem>
+		</List>
+		<Divider />
+		<List>
+			<ListItem button>
+				<ListItemIcon>
+					<MailIcon />
+				</ListItemIcon>
+				<ListItemText primary="All mail" />
+			</ListItem>
+			<ListItem button>
+				<ListItemIcon>
+					<DeleteIcon />
+				</ListItemIcon>
+				<ListItemText primary="Trash" />
+			</ListItem>
+			<ListItem button>
+				<ListItemIcon>
+					<ReportIcon />
+				</ListItemIcon>
+				<ListItemText primary="Spam" />
+			</ListItem>
+		</List>
+	</Drawer>
 );
 MuiTest.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  classes: PropTypes.object.isRequired
+	// eslint-disable-next-line react/forbid-prop-types
+	classes: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(MuiTest);

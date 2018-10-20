@@ -13,8 +13,6 @@
 		"electron-rebuild": "electron-rebuild --parallel --force --types prod,dev,optional --module-dir app",
 		"lint": "cross-env NODE_ENV=development eslint --cache --format=pretty .",
 		"lint-fix": "yarn --silent lint --fix; exit 0",
-		"lint-styles": "stylelint --ignore-path .eslintignore '**/*.*(css|scss)' --syntax scss",
-		"lint-styles-fix": "yarn --silent lint-styles --fix; exit 0",
 		"package": "yarn build && electron-builder build --publish never",
 		"package-all": "yarn build && electron-builder build -mwl",
 		"package-ci": "yarn postinstall && yarn build && electron-builder --publish always",
@@ -41,12 +39,11 @@
 			"prettier --ignore-path .eslintignore --single-quote --write",
 			"git add"
 		],
-		"{*.json,.{babelrc,eslintrc,prettierrc,stylelintrc}}": [
+		"{*.json,.{babelrc,eslintrc,prettierrc}}": [
 			"prettier --ignore-path .eslintignore --parser json --write",
 			"git add"
 		],
 		"*.{css,scss}": [
-			"stylelint --ignore-path .eslintignore --syntax scss --fix",
 			"prettier --ignore-path .eslintignore --single-quote --write",
 			"git add"
 		],

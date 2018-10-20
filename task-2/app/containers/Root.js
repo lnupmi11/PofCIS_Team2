@@ -8,26 +8,26 @@ import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 import App from './App';
 
 const theme = createMuiTheme({
-  palette: {
-    primary: deepPurple,
-    secondary: pink
-  },
-  typography: {
-    useNextVariants: true
-  }
+	palette: {
+		primary: deepPurple,
+		secondary: pink
+	},
+	typography: {
+		useNextVariants: true
+	}
 });
 
 const Root = ({ store }) => (
-  <Provider store={store}>
-    <MuiThemeProvider theme={theme}>
-      <App />
-    </MuiThemeProvider>
-  </Provider>
+	<Provider store={store}>
+		<MuiThemeProvider theme={theme}>
+			<App />
+		</MuiThemeProvider>
+	</Provider>
 );
 
 Root.propTypes = {
-  /* eslint-disable react/forbid-prop-types */
-  store: PropTypes.object.isRequired
+	/* eslint-disable react/forbid-prop-types */
+	store: PropTypes.object.isRequired
 };
 
 export default Root;
