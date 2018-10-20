@@ -8,7 +8,7 @@ const history = createHashHistory();
 
 const rootReducer = createRootReducer(history);
 
-const configureStore = (initialState) => {
+const configureStore = initialState => {
 	// Redux Configuration
 	const middleware = [];
 	const enhancers = [];
@@ -24,7 +24,7 @@ const configureStore = (initialState) => {
 
 	// Redux DevTools Configuration
 	const actionCreators = {
-		addEllipse,
+		addEllipse
 	};
 	// If Redux DevTools Extension is installed use it, otherwise use Redux compose
 	/* eslint-disable no-underscore-dangle */
@@ -44,7 +44,7 @@ const configureStore = (initialState) => {
 
 	if (module.hot) {
 		module.hot.accept(
-			'../reducers',
+			'../reducer',
 			() => store.replaceReducer(require('../reducer')) // eslint-disable-line global-require
 		);
 	}

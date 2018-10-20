@@ -1,9 +1,7 @@
-import { app, BrowserWindow, Menu, shell } from 'electron';
+import { app, dialog, Menu, shell } from 'electron';
 
-export default class MenuBuilder {
-	mainWindow: BrowserWindow;
-
-	constructor(mainWindow: BrowserWindow) {
+class MenuBuilder {
+	constructor(mainWindow) {
 		this.mainWindow = mainWindow;
 	}
 
@@ -185,8 +183,44 @@ export default class MenuBuilder {
 				label: '&File',
 				submenu: [
 					{
+						label: '&New',
+						accelerator: 'Ctrl+N',
+						click: () => {
+							const filename = dialog.showSaveDialog({
+								defaultPath: '.',
+								filters: [
+									{
+										extensions: ['.json']
+									}
+								],
+								properties: ['openFile']
+							});
+							if (filename) this.mainWindow.send('new', filename);
+						}
+					},
+					{
 						label: '&Open',
-						accelerator: 'Ctrl+O'
+						accelerator: 'Ctrl+O',
+						click: () => {
+							const filename = dialog.showOpenDialog({
+								defaultPath: '.',
+								filters: [
+									{
+										extensions: ['.json']
+									}
+								],
+								properties: ['openFile']
+							});
+							if (filename && filename.length === 1)
+								this.mainWindow.send('open', filename[0]);
+						}
+					},
+					{
+						label: '&Save',
+						accelerator: 'Ctrl+S',
+						click: () => {
+							this.mainWindow.send('save');
+						}
 					},
 					{
 						label: '&Close',
@@ -272,3 +306,5 @@ export default class MenuBuilder {
 		];
 	}
 }
+
+export default MenuBuilder;

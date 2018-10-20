@@ -8,7 +8,6 @@ const styles = () => ({
 		backgroundColor: 'white',
 		color: 'black',
 		flexGrow: 1
-		// padding: 10
 	},
 	svg: {
 		height: '100%',
@@ -78,12 +77,24 @@ class Canvas extends React.Component {
 
 	render() {
 		const { figures, classes } = this.props;
+		const { points } = this.state;
 		return (
 			<div className={classes.root} ref={this.root}>
 				<svg className={classes.svg} onClick={this.handleClick}>
 					{figures &&
 						figures.map(figure => (
 							<Figure {...figure} key={JSON.stringify(figure)} />
+						))}
+					{points &&
+						points.map(point => (
+							<circle
+								cx={point.x}
+								cy={point.y}
+								r="3"
+								key={JSON.stringify(point)}
+								stroke="black"
+								strokeWidth="3"
+							/>
 						))}
 				</svg>
 			</div>
