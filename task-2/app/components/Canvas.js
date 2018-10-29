@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from '@material-ui/core/styles/withStyles';
+import CustomColorPicker from './ColorPicker'
 
 const styles = () => ({
 	root: {
@@ -56,9 +57,14 @@ class Canvas extends React.Component {
 		super(props);
 		this.root = React.createRef();
 		this.state = {
-			points: []
+			points: [],
+			background: '#ff1200'
 		};
 	}
+
+	handleChangeComplete = (color) => {
+		this.setState({ background: color.hex });
+	};
 
 	handleClick = event => {
 		const { points } = this.state;
@@ -68,10 +74,11 @@ class Canvas extends React.Component {
 			y: event.pageY - this.root.current.offsetTop
 		};
 		const newPoints = [...points, pos];
-		if (newPoints.length < 2) this.setState(() => ({ points: newPoints }));
+		if (newPoints.length < 2)
+			this.setState({ points: newPoints });
 		else {
-			drawEllipse(newPoints);
-			this.setState(() => ({ points: [] }));
+			drawEllipse(newPoints, this.state.background);
+			this.setState({ points: [] });
 		}
 	};
 
@@ -82,21 +89,22 @@ class Canvas extends React.Component {
 			<div className={classes.root} ref={this.root}>
 				<svg className={classes.svg} onClick={this.handleClick}>
 					{figures &&
-						figures.map(figure => (
-							<Figure {...figure} key={JSON.stringify(figure)} />
-						))}
+					figures.map(figure => (
+						<Figure {...figure} key={JSON.stringify(figure)}/>
+					))}
 					{points &&
-						points.map(point => (
-							<circle
-								cx={point.x}
-								cy={point.y}
-								r="3"
-								key={JSON.stringify(point)}
-								stroke="black"
-								strokeWidth="3"
-							/>
-						))}
+					points.map(point => (
+						<circle
+							cx={point.x}
+							cy={point.y}
+							r="3"
+							key={JSON.stringify(point)}
+							stroke="black"
+							strokeWidth="3"
+						/>
+					))}
 				</svg>
+				<CustomColorPicker handleChangeComplete={this.handleChangeComplete}/>
 			</div>
 		);
 	}

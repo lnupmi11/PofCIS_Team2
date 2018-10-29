@@ -8,7 +8,7 @@ const SAVE_FIGURES = `${CANVAS_PREFIX}SAVE_FIGURES`;
 const ERROR = `${CANVAS_PREFIX}ERROR`;
 
 // Actions
-const addEllipse = points => {
+const addEllipse = (points, color) => {
 	const center = {
 		x: (points[1].x + points[0].x) / 2,
 		y: (points[1].y + points[0].y) / 2
@@ -17,7 +17,7 @@ const addEllipse = points => {
 		type: ADD_ELLIPSE,
 		payload: {
 			type: 'ellipse',
-			fill: '#ff0001',
+			fill: color,
 			cx: center.x,
 			cy: center.y,
 			rx: Math.abs(points[1].x - center.x),

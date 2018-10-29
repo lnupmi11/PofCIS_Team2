@@ -7,7 +7,7 @@ const mapStateToProps = connect(
 		figures: state.canvas.figures
 	}),
 	dispatch => ({
-		drawEllipse: points => dispatch(addEllipse(points))
+		drawEllipse: (points, color) => dispatch(addEllipse(points, color))
 	})
 );
 
