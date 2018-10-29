@@ -11,8 +11,8 @@ class CustomColorPicker extends React.Component {
 		return (
 			<div className='color_picker'>
 				<CirclePicker style={this.props.inputStyles}
-											color={ this.props.background }
-											onChangeComplete={ this.props.handleChangeComplete }/>
+											color={this.props.background}
+											onChangeComplete={this.props.handleChangeComplete}/>
 			</div>
 		);
 	}
