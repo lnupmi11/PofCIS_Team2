@@ -1,0 +1,13 @@
+{
+	"name": "pofcis-task2",
+	"productName": "PofCIS_Task2",
+	"version": "0.0.1",
+	"description": "Task for uni",
+	"main": "./main.prod.js",
+	"scripts": {
+		"electron-rebuild": "node -r babel-register ../internals/scripts/ElectronRebuild.js",
+		"postinstall": "yarn electron-rebuild"
+	},
+	"license": "MIT",
+	"dependencies": {}
+}
