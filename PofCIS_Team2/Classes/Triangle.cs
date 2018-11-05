@@ -124,7 +124,7 @@ namespace PofCIS_Team2.Classes
 			uint i = 1;
 			foreach (var point in _points)
 			{
-				resultStr += $"{Environment.NewLine} 	Point {i}: x={point.X}, y={point.Y}";
+				resultStr += $"{Environment.NewLine} 	Point {i}: x = {point.X}, y = {point.Y}";
 				i++;
 			}
 
