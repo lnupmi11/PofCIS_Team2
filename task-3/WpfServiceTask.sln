@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfServiceTask", "WpfServiceTask\WpfServiceTask.csproj", "{A0BC56A4-3A4D-4810-A6F1-78EDACA3ED4D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfServiceTask.Test", "WpfServiceTask.Test\WpfServiceTask.Test.csproj", "{FEDEC4F1-1D58-46FA-B6CF-1095E61D7024}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A0BC56A4-3A4D-4810-A6F1-78EDACA3ED4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0BC56A4-3A4D-4810-A6F1-78EDACA3ED4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0BC56A4-3A4D-4810-A6F1-78EDACA3ED4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEDEC4F1-1D58-46FA-B6CF-1095E61D7024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEDEC4F1-1D58-46FA-B6CF-1095E61D7024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEDEC4F1-1D58-46FA-B6CF-1095E61D7024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEDEC4F1-1D58-46FA-B6CF-1095E61D7024}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

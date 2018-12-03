@@ -54,30 +54,27 @@ namespace WpfServiceTask.Classes
             var iterator = doc.SelectNodes("/ArrayOfOrder/Order")?.GetEnumerator();
             while (iterator != null && iterator.MoveNext())
             {
-                if (iterator.Current is XmlNode current)
+                switch (iterator.Current)
                 {
-                    if (current.Attributes == null)
-                    {
+                    case XmlNode current when current.Attributes == null:
                         continue;
-                    }
+                    case XmlNode current:
+                        var owner = current.SelectSingleNode("ClientData");
+                        if (owner?.Attributes == null)
+                        {
+                            continue;
+                        }
 
-                    var owner = current.SelectSingleNode("ClientData");
-                    if (owner?.Attributes == null)
-                    {
-                        continue;
-                    }
+                        if (current.Attributes == null)
+                        {
+                            continue;
+                        }
 
-                    if (current.Attributes == null)
-                    {
-                        continue;
-                    }
-
-                    dict[int.Parse(current.Attributes["Id"].Value)] =
-                        owner.Attributes["FirstName"].Value + " " + owner.Attributes["LastName"].Value;
-                }
-                else
-                {
-                    throw new NullReferenceException("storage data is corrupted");
+                        dict[int.Parse(current.Attributes["Id"].Value)] =
+                            owner.Attributes["FirstName"].Value + " " + owner.Attributes["LastName"].Value;
+                        break;
+                    default:
+                        throw new NullReferenceException("storage data is corrupted");
                 }
             }
 
@@ -143,8 +140,8 @@ namespace WpfServiceTask.Classes
             }
         }
 
-     
-        public XmlNode FindNode(int id, ref XmlDocument document)
+
+        private XmlNode FindNode(int id, ref XmlDocument document)
         {
             document.Load(_path);
             var iterator = document.SelectNodes("/ArrayOfOrder/Order")?.GetEnumerator();

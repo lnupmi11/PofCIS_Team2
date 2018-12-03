@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
@@ -17,12 +13,12 @@ namespace WpfServiceTask.Classes
     {
         [XmlAttribute]
         public int Id { get; set; }
-    
-        public ClientData ClientData { get; set; }
-   
-        public RestaurantData RestaurantData { get; set; }
-      
-        public GoodsData GoodsData { get; set; }
+
+        private ClientData ClientData { get; set; }
+
+        private RestaurantData RestaurantData { get; set; }
+
+        private GoodsData GoodsData { get; set; }
 
         public Order(XmlNode node)
         {
