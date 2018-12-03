@@ -123,15 +123,15 @@
             <Button
 				Content="Save"
 				HorizontalAlignment="Center"
-				Margin="0,0,280,0"
+				Margin="72,0,514,0"
 				VerticalAlignment="Center"
 				FontSize="14"
 				FontWeight="Bold"
 				Background="#FF90F715"
 				Cursor="Hand"
 				Height="40"
-				Width="120"
-				Click="SaveOrder">
+				Width="214"
+				Click="SaveOrder" RenderTransformOrigin="0.313,0.575">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="5"/>
@@ -142,14 +142,14 @@
             <Button
 				Content="New"
 				HorizontalAlignment="Center"
-				Margin="280,0,280,0"
+				Margin="291,0,298,0"
 				VerticalAlignment="Center"
 				FontSize="14"
 				FontWeight="Bold"
 				Cursor="Hand"
 				Background="#FF90F715"
 				Height="40"
-				Width="120"
+				Width="211"
 				Click="NewOrder">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -161,14 +161,14 @@
             <Button
 				Content="Explore"
 				HorizontalAlignment="Center"
-				Margin="280,0,0,0"
+				Margin="507,0,66,0"
 				VerticalAlignment="Center"
 				FontSize="14"
 				FontWeight="Bold"
 				Background="#FF90F715"
 				Cursor="Hand"
 				Height="40"
-				Width="120"
+				Width="227"
 				Click="ExploreOrders">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -199,7 +199,7 @@
 						x:Name="FirstName"
 						HorizontalAlignment="Left"
 						Height="30"
-						Margin="0,0,0,-4"
+						Margin="0,0,-2,-4"
 						TextWrapping="Wrap"
 						VerticalAlignment="Top"
 						Padding="3"
@@ -212,7 +212,7 @@
 						Text="{Binding Path=ClientData.FirstName}"
 						GotMouseCapture="InputFocused"
 						GotKeyboardFocus="InputFocused"
-						Width="195"/>
+						Width="283"/>
                 </GroupBox>
                 <GroupBox
 					DockPanel.Dock="Top"
@@ -226,7 +226,7 @@
                     <TextBox
 						x:Name="LastName"
 						HorizontalAlignment="Left"
-						Margin="-28,10,-33,-14"
+						Margin="10,0,-2,-4"
 						TextWrapping="Wrap"
 						Padding="3"
 						BorderBrush="Transparent"
@@ -238,23 +238,23 @@
 						Text="{Binding Path=ClientData.LastName}"
 						GotMouseCapture="InputFocused"
 						GotKeyboardFocus="InputFocused"
-						Width="280" d:DataContext="{d:DesignData Order}" />
+						Width="334" d:DataContext="{d:DesignData Order}" />
                 </GroupBox>
 
                 <GroupBox
 					DockPanel.Dock="Top"
-					Header="&#x9;&#x9;&#x9;Phone Number"
+					Header="&#x9;Phone Number"
 					Height="50"
 					FontSize="13"
 					HorizontalAlignment="Right"
 					VerticalAlignment="Top"
-					Margin="0,80,219,0"
-					Width="366">
+					Margin="0,80,216,0"
+					Width="293">
                     <TextBox
 						x:Name="PhoneNumber"
 						HorizontalAlignment="Left"
 						Height="30"
-						Margin="0,0,0,0"
+						Margin="0,0,0,-4"
 						TextWrapping="Wrap"
 						VerticalAlignment="Top"
 						Padding="3"
@@ -267,7 +267,7 @@
 						Text="{Binding Path=ClientData.PhoneNumber}"
 						GotMouseCapture="InputFocused"
 						GotKeyboardFocus="InputFocused"
-						Width="354"/>
+						Width="273"/>
                 </GroupBox>
                 <GroupBox
 					Header=""
@@ -543,7 +543,7 @@
                 </GroupBox>
                 <GroupBox
 					DockPanel.Dock="Top"
-					Header="&#x9;&#x9;&#x9;Price($)"
+					Header="&#x9;&#x9;   Price($)"
 					Height="50"
 					FontSize="13"
 					HorizontalAlignment="Right"
