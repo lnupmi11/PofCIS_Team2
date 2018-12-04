@@ -6,6 +6,9 @@ using System.Xml.Serialization;
 
 namespace WpfServiceTask.Classes.OrderData
 {
+    /// <summary>
+    /// Class for goods data
+    /// </summary>
     [Serializable]
     public class GoodsData
     {
@@ -13,15 +16,25 @@ namespace WpfServiceTask.Classes.OrderData
         public uint OrderNumber { get; set; }
         [XmlAttribute]
         public double Price { get; set; }
-
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public GoodsData() { }
+        /// <summary>
+        /// Constructor with params
+        /// </summary>
+        /// <param name="orderNumber"></param>
+        /// <param name="price"></param>
         public GoodsData(uint orderNumber, double price)
         {
             OrderNumber = orderNumber;
             Price = price;
         }
 
-
+        /// <summary>
+        /// Constructor which use XmlAttributeCollection to create an object
+        /// </summary>
+        /// <param name="source"></param>
         public GoodsData(XmlAttributeCollection source)
         {
             if (source == null)
@@ -42,7 +55,10 @@ namespace WpfServiceTask.Classes.OrderData
 
             Price = price;
         }
-
+        /// <summary>
+        /// Method to convert GoodsData object to XML
+        /// </summary>
+        /// <returns></returns>
         public XElement ToXml()
         {
             return new XElement(
@@ -52,3 +68,4 @@ namespace WpfServiceTask.Classes.OrderData
         }
     }
 }
+

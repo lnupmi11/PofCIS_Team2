@@ -5,6 +5,9 @@ using System.Xml.Serialization;
 
 namespace WpfServiceTask.Classes.OrderData
 { 
+    /// <summary>
+    /// Class for restaurant
+    /// </summary>
     [Serializable]
     public class RestaurantData
     {
@@ -12,18 +15,27 @@ namespace WpfServiceTask.Classes.OrderData
         public string Name { get; set; }
         [XmlAttribute]
         public Address Address { get; set; }
-
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public RestaurantData()
         {
             Address = new Address();
         }
-
+        /// <summary>
+        /// Constructor with params
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="address"></param>
         public RestaurantData(string name, Address address)
         {
             Name = name;
             Address = address;
         }
-
+        /// <summary>
+        /// Constructor which create Object using XmlNode
+        /// </summary>
+        /// <param name="node"></param>
         public RestaurantData(XmlNode node)
         {
             if (node == null)
@@ -46,7 +58,10 @@ namespace WpfServiceTask.Classes.OrderData
 
             Address = new Address(address.Attributes);
         }
-
+        /// <summary>
+        /// Method to convert RestaurantData object to XML
+        /// </summary>
+        /// <returns></returns>
         public XElement ToXml()
         {
             return new XElement(
@@ -56,3 +71,4 @@ namespace WpfServiceTask.Classes.OrderData
         }
     }
 }
+

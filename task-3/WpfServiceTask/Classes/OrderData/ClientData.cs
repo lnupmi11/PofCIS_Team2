@@ -9,6 +9,9 @@ using System.Xml.Serialization;
 
 namespace WpfServiceTask.Classes.OrderData
 {
+    /// <summary>
+    /// Class for client data
+    /// </summary>
     [Serializable]
     public class ClientData
     {
@@ -20,12 +23,20 @@ namespace WpfServiceTask.Classes.OrderData
         public string PhoneNumber { get; set; }
         [XmlAttribute]
         public Address Address { get; set; }
-
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public ClientData()
         {
             Address = new Address();
         }
-
+        /// <summary>
+        /// Constructor with params
+        /// </summary>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="phoneNumber"></param>
+        /// <param name="address"></param>
         public ClientData(string firstName, string lastName, string phoneNumber, Address address)
         {
             FirstName = firstName.Trim();
@@ -34,6 +45,10 @@ namespace WpfServiceTask.Classes.OrderData
             Address = address;
         }
 
+        /// <summary>
+        /// Constructor which create Object using XmlNode
+        /// </summary>
+        /// <param name="node"></param>
         public ClientData(XmlNode node)
         {
             if (node == null)
@@ -58,7 +73,10 @@ namespace WpfServiceTask.Classes.OrderData
 
             Address = new Address(addressNode.Attributes);
         }
-
+        /// <summary>
+        /// Method to convert ClientData object to XML
+        /// </summary>
+        /// <returns></returns>
         public XElement ToXml()
         {
             return new XElement(
@@ -74,3 +92,4 @@ namespace WpfServiceTask.Classes.OrderData
 
     }
 }
+

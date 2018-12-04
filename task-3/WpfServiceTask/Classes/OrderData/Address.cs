@@ -6,6 +6,9 @@ using System.Xml.Serialization;
 
 namespace WpfServiceTask.Classes.OrderData
 {
+    /// <summary>
+    /// Class for address 
+    /// </summary>
     [Serializable]
     public class Address
     {
@@ -16,17 +19,28 @@ namespace WpfServiceTask.Classes.OrderData
         [XmlAttribute]
         public uint BuildingNumber { get;set;}
    
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public Address()
         {
         }
-
+        /// <summary>
+        /// Constuctor with params
+        /// </summary>
+        /// <param name="city"></param>
+        /// <param name="street"></param>
+        /// <param name="buildingNumber"></param>
         public Address(string city, string street, uint buildingNumber)
         {
             City = city.Trim();
             Street = street.Trim();
             BuildingNumber = buildingNumber;
         }
-
+        /// <summary>
+        /// Constructor which use XmlAttributeCollection to create an object
+        /// </summary>
+        /// <param name="source"></param>
         public Address(XmlAttributeCollection source)
         {
             if (source == null)
@@ -43,7 +57,10 @@ namespace WpfServiceTask.Classes.OrderData
 
             BuildingNumber = buidingNumber;
         }
-
+        /// <summary>
+        /// Method to convert Address object to XML
+        /// </summary>
+        /// <returns></returns>
         public XElement ToXml()
         {
             return new XElement(
@@ -54,3 +71,4 @@ namespace WpfServiceTask.Classes.OrderData
         }
     }
 }
+
