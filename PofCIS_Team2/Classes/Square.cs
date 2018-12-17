@@ -38,7 +38,7 @@ namespace PofCIS_Team2.Classes
 			_points = points;
 		}
 
-		private bool PointsAreValid(IReadOnlyList<Point> points)
+		public static bool PointsAreValid(IReadOnlyList<Point> points)
 		{
 			if (points == null)
 			{
